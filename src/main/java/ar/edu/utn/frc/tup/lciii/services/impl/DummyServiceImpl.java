@@ -41,24 +41,24 @@ public class DummyServiceImpl implements DummyService {
 
     @Override
     public Dummy createDummy(Dummy dummy) {
-        // Optional<DummyEntity> DummyEntityFound = dummyJpaRepository.findBySomething();
+        // Optional<DummyEntity> dummyEntityFound = dummyJpaRepository.findBySomething();
 
-        // if (DummyEntityFound.isPresent()) {
+        // if (dummyEntityFound.isPresent()) {
         //     return null;
         // }
 
         DummyEntity dummyEntity = modelMapper.map(dummy, DummyEntity.class);
-        DummyEntity DummyEntitySaved = dummyJpaRepository.save(dummyEntity);
+        DummyEntity dummyEntitySaved = dummyJpaRepository.save(dummyEntity);
 
-        return modelMapper.map(DummyEntitySaved, Dummy.class);
+        return modelMapper.map(dummyEntitySaved, Dummy.class);
     }
 
     @Override
     public Dummy updateDummy(Dummy dummy) {
         DummyEntity dummyEntity = modelMapper.map(dummy, DummyEntity.class);
-        DummyEntity DummyEntitySaved = dummyJpaRepository.save(dummyEntity);
+        DummyEntity dummyEntitySaved = dummyJpaRepository.save(dummyEntity);
 
-        return modelMapper.map(DummyEntitySaved, Dummy.class);
+        return modelMapper.map(dummyEntitySaved, Dummy.class);
     }
 
     @Override
