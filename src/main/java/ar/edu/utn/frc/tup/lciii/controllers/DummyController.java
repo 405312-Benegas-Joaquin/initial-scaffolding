@@ -19,7 +19,7 @@ import ar.edu.utn.frc.tup.lciii.services.DummyService;
 public class DummyController {
     @Autowired
     private DummyService dummyService;
-    @Qualifier("modelMapper")
+
     @Autowired
     private ModelMapper modelMapper;
 

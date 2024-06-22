@@ -2,6 +2,7 @@ package ar.edu.utn.frc.tup.lciii.services.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,7 @@ public class DummyServiceImpl implements DummyService {
         for (DummyEntity dummyEntity : dummyEntities) {
             dummyList.add(modelMapper.map(dummyEntity, Dummy.class));
         }
-        
+
         return dummyList;
     }
 
@@ -41,11 +42,11 @@ public class DummyServiceImpl implements DummyService {
 
     @Override
     public Dummy createDummy(Dummy dummy) {
-        // Optional<DummyEntity> dummyEntityFound = dummyJpaRepository.findBySomething();
+        Optional<DummyEntity> dummyEntityFound = dummyJpaRepository.findByDummy("something");
 
-        // if (dummyEntityFound.isPresent()) {
-        //     return null;
-        // }
+        if (dummyEntityFound.isPresent()) {
+            return null;
+        }
 
         DummyEntity dummyEntity = modelMapper.map(dummy, DummyEntity.class);
         DummyEntity dummyEntitySaved = dummyJpaRepository.save(dummyEntity);

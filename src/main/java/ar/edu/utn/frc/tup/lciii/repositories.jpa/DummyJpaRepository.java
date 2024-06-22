@@ -9,6 +9,6 @@ import java.util.Optional;
 
 @Repository
 public interface DummyJpaRepository extends JpaRepository<DummyEntity, Long> {
-    // Optional<DummyEntity> findBySomething(String something);
+    Optional<DummyEntity> findByDummy(String something);
 }
   
