@@ -5,7 +5,10 @@ import org.springframework.stereotype.Repository;
 
 import ar.edu.utn.frc.tup.lciii.entities.DummyEntity;
 
+import java.util.Optional;
+
 @Repository
 public interface DummyJpaRepository extends JpaRepository<DummyEntity, Long> {
+    // Optional<DummyEntity> findBySomething(String something);
 }
   
