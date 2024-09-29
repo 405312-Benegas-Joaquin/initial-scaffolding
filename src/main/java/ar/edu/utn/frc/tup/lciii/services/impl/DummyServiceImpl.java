@@ -68,5 +68,15 @@ public class DummyServiceImpl implements DummyService {
     public void deleteDummyById(Long id) {
         dummyJpaRepository.deleteById(id);
     }
+
+    @Override
+    public ResponseDummyDTO getDummyBySomething(String something) {
+        Optional<DummyEntity> dummyEntityFound = dummyJpaRepository.findByDummy(something);
+
+        if (dummyEntityFound.isPresent()) {
+            throw new IllegalArgumentException("Dummy already exists");
+        }
+
+        return modelMapper.map(dummyEntityFound, ResponseDummyDTO.class);
+    }
 }
-  

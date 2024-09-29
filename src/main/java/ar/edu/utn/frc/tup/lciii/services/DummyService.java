@@ -9,9 +9,14 @@ import org.springframework.stereotype.Service;
 @Service
 public interface DummyService {
     List<ResponseDummyDTO> getDummyList();
+
     ResponseDummyDTO getDummyById(Long id);
+
     ResponseDummyDTO createDummy(SaveDummyDTO dummy) throws IllegalArgumentException;
+
     ResponseDummyDTO updateDummy(Long id, SaveDummyDTO dummy);
+
     void deleteDummyById(Long id);
+
+    ResponseDummyDTO getDummyBySomething(String something);
 }
-  
