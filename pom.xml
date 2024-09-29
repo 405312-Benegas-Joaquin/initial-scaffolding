@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>ar.edu.utn.frc.tup.lciii</groupId>
+    <groupId>ar.edu.utn.frc.tup.lc.iv</groupId>
     <artifactId>scaffolding</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>scaffolding</name>
