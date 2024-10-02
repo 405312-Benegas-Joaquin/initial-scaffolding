@@ -1,10 +1,10 @@
-package ar.edu.utn.frc.tup.lc.iv.controllers;
-/*
+package ar.edu.utn.frc.tup.lc.iv._example_classes.controllers;
 
-import ar.edu.utn.frc.tup.lc.iv.dtos.dummy.ResponseDummyDTO;
-import ar.edu.utn.frc.tup.lc.iv.dtos.dummy.SaveDummyDTO;
-import ar.edu.utn.frc.tup.lc.iv.models.Dummy;
-import ar.edu.utn.frc.tup.lc.iv.services.DummyService;
+
+import ar.edu.utn.frc.tup.lc.iv._example_classes.dtos.ResponseDummyDTO;
+import ar.edu.utn.frc.tup.lc.iv._example_classes.dtos.SaveDummyDTO;
+import ar.edu.utn.frc.tup.lc.iv._example_classes.models.Dummy;
+import ar.edu.utn.frc.tup.lc.iv._example_classes.services.DummyService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +15,7 @@ import org.springframework.test.web.servlet.MvcResult;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
@@ -145,4 +146,3 @@ class DummyControllerTest {
                 .andExpect(status().isOk());
     }
 }
- */

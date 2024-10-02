@@ -1,0 +1,1 @@
+{"openapi":"3.0.1","info":{"title":"scaffolding","description":"SpringBoot Project Template","contact":{"name":"Joaquin Ezequiel Benegas","email":"joacobenegas2@gmail.com"},"version":"0.0.1-SNAPSHOT"},"servers":[{"url":"http://localhost:8080","description":"SpringBoot Project Template"}],"paths":{},"components":{}}

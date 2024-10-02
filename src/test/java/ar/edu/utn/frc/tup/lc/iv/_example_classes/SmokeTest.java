@@ -1,8 +1,7 @@
-package ar.edu.utn.frc.tup.lc.iv;
+package ar.edu.utn.frc.tup.lc.iv._example_classes;
 
-/*
-
-import ar.edu.utn.frc.tup.lc.iv.services.DummyService;
+import ar.edu.utn.frc.tup.lc.iv._example_classes.controllers.DummyController;
+import ar.edu.utn.frc.tup.lc.iv._example_classes.services.DummyService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -30,4 +29,4 @@ public class SmokeTest {
     }
 }
 
- */
+

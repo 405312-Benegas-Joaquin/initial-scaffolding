@@ -1,8 +1,6 @@
-package ar.edu.utn.frc.tup.lc.iv.repositories.jpa;
+package ar.edu.utn.frc.tup.lc.iv._example_classes.repositories.jpa;
 
-/*
-
-import ar.edu.utn.frc.tup.lc.iv.entities.DummyEntity;
+import ar.edu.utn.frc.tup.lc.iv._example_classes.entities.DummyEntity;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -33,5 +31,3 @@ class DummyJpaRepositoryTest {
         assertEquals("something", dummyResult.get().getDummy());
     }
 }
-
- */

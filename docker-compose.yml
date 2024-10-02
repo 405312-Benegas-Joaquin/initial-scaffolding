@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  # main application, name given by spring.application.name in application.properties
+  application:
+    container_name: application
+    # path where dockerfile is
+    build: .
+    ports:
+      # local port (through which I will access) : container port (obtained from application.properties)
+      - "8080:8080"
+    environment:
+      # environment variables that will be passed to application
+      APP_NAME: application
+    depends_on:
+      - external-service
+      # condition: service_healthy can be used to check if service is healthy
+      # (requires healthcheck config in external-service)
+
+  # external service
+  external-service:
+    container_name: external-service
+    # prebuilt image from external service
+    image: provided-image:1.0.0
+    ports:
+      - "8082:8080"
