@@ -2,6 +2,8 @@ package ar.edu.utn.frc.tup.lc.iv._example_classes.clients;
 
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +20,9 @@ import java.util.Objects;
 @RequiredArgsConstructor
 public class DummyRestClient {
 
+    // For logging
+    private static final Logger logger = LoggerFactory.getLogger(DummyRestClient.class);
+
     private final RestTemplate restTemplate;
     private final String baseUrl = "http://localhost:8080/api/dummies";
 
@@ -27,6 +32,7 @@ public class DummyRestClient {
     public List<DummyDto> getAllDummies() {
         try {
             ResponseEntity<DummyDto[]> response = restTemplate.getForEntity(baseUrl, DummyDto[].class);
+            logger.warn("Dummies found: {}", (Object) response.getBody());
             return Arrays.asList(Objects.requireNonNull(response.getBody()));
         } catch (HttpClientErrorException e) {
             throw new EntityNotFoundException("No Dummies found");
@@ -35,7 +41,9 @@ public class DummyRestClient {
 
     public DummyDto getDummyById(Long dummyId) {
         try {
+            logger.warn("Getting Dummy with ID: {}", dummyId);
             ResponseEntity<DummyDto> response = restTemplate.getForEntity(baseUrl + "/" + dummyId, DummyDto.class);
+            logger.warn("Dummy found: {}", response.getBody());
             return response.getBody();
         } catch (HttpClientErrorException e) {
             throw new EntityNotFoundException("Dummy not found");

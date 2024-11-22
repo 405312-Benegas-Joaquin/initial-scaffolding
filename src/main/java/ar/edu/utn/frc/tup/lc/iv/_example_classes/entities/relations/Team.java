@@ -27,7 +27,9 @@ public class Team {
      * especifica el nombre del campo que maneja la relación
      * en esa otra entidad.
      */
-    @OneToMany(mappedBy = "team") // @OneToMany siempre se indica con mappedBy
+    @OneToMany(mappedBy = "team", cascade = CascadeType.ALL)
+    // @OneToMany siempre se indica con mappedBy,
+    // a menos que en la otra clase no se tenga la referencia correspondiente
     private List<Player> players;
 
     @ManyToMany(mappedBy = "teams")

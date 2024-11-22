@@ -5,6 +5,7 @@ import ar.edu.utn.frc.tup.lc.iv._example_classes.dtos.SaveDummyDTO;
 import ar.edu.utn.frc.tup.lc.iv._example_classes.entities.DummyEntity;
 import ar.edu.utn.frc.tup.lc.iv._example_classes.repositories.jpa.DummyJpaRepository;
 import ar.edu.utn.frc.tup.lc.iv._example_classes.services.DummyService;
+import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,12 +15,12 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class DummyServiceImpl implements DummyService {
-    @Autowired
-    private DummyJpaRepository dummyJpaRepository;
 
-    @Autowired
-    private ModelMapper modelMapper;
+    private final DummyJpaRepository dummyJpaRepository;
+
+    private final ModelMapper modelMapper;
 
     @Override
     public List<ResponseDummyDTO> getDummyList() {
